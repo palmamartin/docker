@@ -29,8 +29,35 @@ RUN set -x \
         # build and install MeteoIO 2.5.1
         && ( \
             cd meteoio \
-            && cmake -DCMAKE_BUILD_TYPE="minsizerel" \
+            && cmake -DBUILD_SHARED_LIBS:BOOL=ON \
+                     -DBUILD_STATIC_LIBS:BOOL=OFF \
+                     -DBUILD_TESTING:BOOL=OFF \
+                     -DCMAKE_BUILD_TYPE="minsizerel" \
                      -DCMAKE_INSTALL_PREFIX="/usr" \
+                     -DDATA_QA:BOOL=OFF \
+                     -DDEST="safe" \
+                     -DGUI_EXCEPTIONS:BOOL=OFF \
+                     -DINSTALL_DOC:BOOL=OFF \
+                     -DLEAKS_CHECK:BOOL=OFF \
+                     -DPLUGIN_A3DIO:BOOL=ON \
+                     -DPLUGIN_ALPUG:BOOL=ON \
+                     -DPLUGIN_ARCIO:BOOL=ON \
+                     -DPLUGIN_ARPSIO:BOOL=ON \
+                     -DPLUGIN_BORMAIO:BOOL=OFF \
+                     -DPLUGIN_CNRMIO:BOOL=OFF \
+                     -DPLUGIN_COSMOXMLIO:BOOL=OFF \
+                     -DPLUGIN_GEOTOPIO:BOOL=ON \
+                     -DPLUGIN_GRASSIO:BOOL=ON \
+                     -DPLUGIN_GRIBIO:BOOL=OFF \
+                     -DPLUGIN_GSNIO:BOOL=OFF \
+                     -DPLUGIN_IMISIO:BOOL=OFF \
+                     -DPLUGIN_NETCDFIO:BOOL=OFF \
+                     -DPLUGIN_PGMIO:BOOL=ON \
+                     -DPLUGIN_PNGIO:BOOL=OFF \
+                     -DPLUGIN_PSQLIO:BOOL=OFF \
+                     -DPLUGIN_SASEIO:BOOL=OFF \
+                     -DPLUGIN_SMETIO:BOOL=ON \
+                     -DPLUGIN_SNIO:BOOL=ON \
                      -DPROJ4:BOOL=ON . \
             && cmake -LAH \
             && make -j4 install \
