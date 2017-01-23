@@ -1,5 +1,7 @@
 FROM debian:jessie-slim
+
 MAINTAINER Francesco Serafin <francesco.serafin.3@gmail.com>, Olaf David <odavid@colostate.edu>
+
 RUN set -x \
         \
         && apt-get -y update \
@@ -40,10 +42,14 @@ RUN set -x \
         # build and install GEOtop 2.1
         && ( \
             cd geotop-TRIEST_release \
-            && cmake -DCMAKE_BUILD_TYPE="minsizerel" \
+            && cmake -DBUILD_STATIC:BOOL=OFF \
+                     -DCMAKE_BUILD_TYPE="minsizerel" \
                      -DCMAKE_INSTALL_PREFIX="/usr" \
-                     -DMETEOIO_PATH="/usr" \
                      -DENABLE_INTERNAL_METEODISTR:BOOL=OFF \
+                     -DMETEOIO_OUTPUT:BOOL=OFF \
+                     -DMETEOIO_PATH="/usr" \
+                     -DVERBOSE:BOOL=OFF \
+                     -DVERY_VERBOSE=OFF \
                      -DCMAKE_CXX_FLAGS_RELEASE="-Wextra -Wall -O2 -Wno-unused-parameter \
                         -Wno-unused-function -Wno-unused-result \
                         -Wno-unused-but-set-variable" . \
@@ -82,5 +88,6 @@ RUN set -x \
             libboost-filesystem1.55.0 \
             libboost-system1.55.0 \
             libboost-iostreams1.55.0 
+
 RUN mkdir /work
 CMD ["/usr/bin/geotop", "/work" ]
