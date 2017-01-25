@@ -56,11 +56,24 @@ Following a summary of the steps to take for installing and running GEOtop.
 
 # Supported Docker versions
 
+This image is officially supported on Docker version 1.13.0.
+
+Support for older versions (down to 1.6) is provided on a best-effort basis. Plese see [the Docker installation documentation][] for details on how to upgrade your Docker daemon.
+
 # User Feedback
+
+If you have any problems with or questions about this image, please contact us through the [GitHub GEOtop Docker issue][]. If the issue is related to the model, please contact the GEOtop community through the [GitHub GEOtop issue][] or the [GEOtopUsers mailing list][].
 
 # Known Issues
 
+* root
+* kill docker process
+
 ## Bibliography
+
+Endrizzi S., Gruber S., Dall’Amico M., Rigon R., [GEOtop 2.0: Simulating the combined energy and water balance at and below the land surface accounting for soil freezing, snow cover and terrain effects][], Geosci. Model Dev., 2014
+
+Rigon, R., Bertoldi, G., & Over, T. M. (2006), [GEOtop: A Distributed Hydrological Model with Coupled Water and Energy Budgets][], Journal of Hydrometeorology, 7, 371–388.
 
 [```2.1.0```, (2.1/Dockerfile)]: https://github.com/geotopmodel/docker/blob/master/2.1/Dockerfile
 [www.geotop.org]: http://geotopmodel.github.io/geotop/
@@ -71,3 +84,8 @@ Following a summary of the steps to take for installing and running GEOtop.
 [geotop_examples]: https://github.com/geotopmodel/geotop_examples
 [tests folder]: https://github.com/geotopmodel/geotop/tree/master/tests
 [Docker]: https://www.docker.com/
+[GitHub GEOtop Docker issue]: https://github.com/geotopmodel/docker/issues
+[GitHub GEOtop issue]: https://github.com/geotopmodel/geotop/issues
+[GEOtopUsers mailing list]: https://groups.google.com/forum/#!forum/geotopusers
+[GEOtop 2.0: Simulating the combined energy and water balance at and below the land surface accounting for soil freezing, snow cover and terrain effects]: http://www.geosci-model-dev.net/7/2831/2014/gmd-7-2831-2014.html
+[GEOtop: A Distributed Hydrological Model with Coupled Water and Energy Budgets]: https://dl.dropboxusercontent.com/u/4762277/000-me/J24-GEOtop.pdf
