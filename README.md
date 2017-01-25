@@ -36,15 +36,28 @@ $ cd <path>/<to>/small_example
 
 Then copy and paste the following command
 ```
-$ docker run --rm  -v $(pwd):/work omslab/geotop:2.1
+$ docker run --rm -v $(pwd):/work omslab/geotop
 ```
-it will automatically download the dockerized version of GEOtop from the DockerHub (the download is required just for the very firs time) and run it. Any further time you will type this command, GEOtop will just simply start on your machine.
+it will automatically download the **latest** dockerized version of GEOtop from the DockerHub (the download is required just for the very firs time) and run it. Any further time you will type this command, GEOtop will just simply start on your machine.
+
+To run a particular tagged version of GEOtop, just add ```:<tag>``` as follow
+
+```
+$ docker run --rm -v $(pwd):/work omslab/geotop:2.1
+```
+
+# Command specifics
+
+* ```--rm```: Docker automatically removes the container when it exits
+* ```-v $(pwd):/work```: the current directory (a.k.a. GEOtop working directory) is mounted from within the container into the *work* dir
+* ```omslab/geotop```: <repository>/<containerized software>
 
 # Output
 
 Following the final part of the output of a GEOtop run
 
-```[NOTICE]: Close files
+```
+[NOTICE]: Close files
 [NOTICE]: Deallocating global variables
 [NOTICE]: Deallocating soil
 [NOTICE]: Deallocating top
@@ -71,7 +84,7 @@ Following a summary of the steps to take for installing and running GEOtop.
 3. Open up a terminal emulator and change directory until get into the unpacked [small_example][] dataset
 4. Run the GEOtop Docker image
    ```
-   $ docker run --rm  -v $(pwd):/work omslab/geotop:2.1
+   $ docker run --rm  -v $(pwd):/work omslab/geotop
    ```
 
 # Supported Docker versions
@@ -86,8 +99,9 @@ If you have any problems with or questions about this image, please contact us t
 
 # Known Issues
 
-* root
-* kill docker process
+* Docker runs as a root user, thus the output files have root privileges. You can always open and read them without any problem;
+* To stop GEOtop might be necessary to kill the Docker process;
+* GEOtop runs from within the container. This is the reason why the screen output shows ```/work/<file or folder>``` instead of your current path.
 
 ## Bibliography
 
