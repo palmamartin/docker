@@ -1,5 +1,5 @@
 # Supported tags and respective ```Dockerfile``` links
-* (Triest) [*```2.1.0```*, (2.1/Dockerfile)][]
+* (Triest) [```2.1.0```, *(2.1/Dockerfile)*][]
 
 # What is GEOtop?
 
@@ -7,7 +7,7 @@ GEOtop is a distributed model which numerically integrates mass and energy balan
 
 > [www.geotop.org][]
 
-![GEOtop logo](https://github.com/GrowWorkingHard/logos/blob/master/geotop/GEOtop_200x250.jpg) 
+![GEOtop logo](https://raw.githubusercontent.com/GrowWorkingHard/logos/master/geotop/GEOtop_200x250.jpg) 
 
 # How to use this image
 
