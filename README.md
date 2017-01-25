@@ -50,7 +50,7 @@ $ docker run --rm -v $(pwd):/work omslab/geotop:2.1
 
 * ```--rm```: Docker automatically removes the container when it exits
 * ```-v $(pwd):/work```: the current directory (a.k.a. GEOtop working directory) is mounted from within the container into the *work* dir
-* ```omslab/geotop```: <repository>/<containerized software>
+* ```omslab/geotop```: this is the repository-software pair ```<repository>/<containerized software>```
 
 # Output
 
