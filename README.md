@@ -42,6 +42,26 @@ it will automatically download the dockerized version of GEOtop from the DockerH
 
 # Output
 
+Following the final part of the output of a GEOtop run
+
+```[NOTICE]: Close files
+[NOTICE]: Deallocating global variables
+[NOTICE]: Deallocating soil
+[NOTICE]: Deallocating top
+[NOTICE]: Deallocating land
+[NOTICE]: Deallocating water
+[NOTICE]: Deallocating channel network
+[NOTICE]: Deallocating UV
+[NOTICE]: Deallocating egy
+[NOTICE]: Deallocating snow
+[NOTICE]: Deallocating glacier
+[NOTICE]: Deallocating met
+[NOTICE]: Deallocating times
+[NOTICE]: Deallocating par
+[NOTICE]: Deallocating novalues
+[NOTICE]: End of simulation!
+```
+
 ## Summary
 
 Following a summary of the steps to take for installing and running GEOtop.
@@ -84,6 +104,7 @@ Rigon, R., Bertoldi, G., & Over, T. M. (2006), [GEOtop: A Distributed Hydrologic
 [geotop_examples]: https://github.com/geotopmodel/geotop_examples
 [tests folder]: https://github.com/geotopmodel/geotop/tree/master/tests
 [Docker]: https://www.docker.com/
+[the Docker installation documentation]: https://docs.docker.com/engine/installation/
 [GitHub GEOtop Docker issue]: https://github.com/geotopmodel/docker/issues
 [GitHub GEOtop issue]: https://github.com/geotopmodel/geotop/issues
 [GEOtopUsers mailing list]: https://groups.google.com/forum/#!forum/geotopusers
