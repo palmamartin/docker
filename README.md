@@ -1,5 +1,5 @@
 # Supported tags and respective ```Dockerfile``` links
-* (Triest) [```2.1.0```, *(2.1/Dockerfile)*][]
+* (Triest) *[```2.1.0```, (2.1/Dockerfile)][]*
 
 # What is GEOtop?
 
