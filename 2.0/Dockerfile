@@ -20,33 +20,16 @@ RUN set -x \
             cmake \
             g++ \
             gcc \
-	    git \
+            git \
         \
         # download and unpack GEOtop 2.0
-        && wget https://github.com/geotopmodel/geotop/archive/TRIEST_release.tar.gz \
-        && tar xvf TRIEST_release.tar.gz \
+        && git clone https://github.com/se27xx/GEOtop \
         # build and install GEOtop 2.0
         && ( \
-            cd geotop-TRIEST_release \
-            && cmake -DBUILD_STATIC:BOOL=OFF \
-                     -DCMAKE_BUILD_TYPE="minsizerel" \
-                     -DCMAKE_INSTALL_PREFIX="/usr" \
-                     -DENABLE_INTERNAL_METEODISTR:BOOL=ON \
-                     -DMETEOIO_OUTPUT:BOOL=OFF \
-                     -DMETEOIO_PATH="/usr" \
-                     -DVERBOSE:BOOL=OFF \
-                     -DVERY_VERBOSE=OFF \
-                     -DCMAKE_CXX_FLAGS_RELEASE="-Wextra -Wall -O2 -Wno-unused-parameter \
-                        -Wno-unused-function -Wno-unused-result \
-                        -Wno-unused-but-set-variable" . \
-            && make -j4 install \
+            cd GEOtop \
+            && mkdir bin \
+            && make -f geotop.make \
             ) \
-        \
-        # clean up donwloaded packages and installation folders
-        && rm -rf meteoio \
-                  geotop-TRIEST_release \
-                  MeteoIO-2.5.1-src.tar.gz \
-                  TRIEST_release.tar.gz \
         \
         # purge obsolete packages
         && apt-get -y remove --purge \
@@ -59,15 +42,7 @@ RUN set -x \
             gcc \
         \
         # purge not needed packages
-        && apt-get -y autoremove --purge \
-        \
-        # install only required libraries without API
-        && apt-get install --no-install-recommends -y \
-            libboost-regex1.55.0 \
-            libboost-program-options1.55.0 \
-            libboost-filesystem1.55.0 \
-            libboost-system1.55.0 \
-            libboost-iostreams1.55.0 
+        && apt-get -y autoremove --purge
 
 RUN mkdir /work
-CMD ["/usr/bin/geotop", "/work" ]
+CMD ["/GEOtop/bin/geotop-2.0.0", "/work" ]
