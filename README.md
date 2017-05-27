@@ -132,6 +132,7 @@ Endrizzi S., Gruber S., Dall’Amico M., Rigon R., [GEOtop 2.0: Simulating the c
 Rigon, R., Bertoldi, G., & Over, T. M. (2006), [GEOtop: A Distributed Hydrological Model with Coupled Water and Energy Budgets][], Journal of Hydrometeorology, 7, 371–388.
 
 [```2.1```, (2.1/Dockerfile)]: https://github.com/geotopmodel/docker/blob/master/2.1/Dockerfile
+[```2.0```, (2.0/Dockerfile)]: https://github.com/geotopmodel/docker/blob/master/2.0/Dockerfile
 [www.geotop.org]: http://geotopmodel.github.io/geotop/
 [GNU/Linux]: https://docs.docker.com/engine/installation/
 [Mac OS X]: https://docs.docker.com/docker-for-mac/
