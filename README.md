@@ -44,14 +44,19 @@ To run GEOtop, open a terminal and change into the [small_example][] folder.
 
 ```$ cd small_example```
 
-Copy and paste the following command. This should work on all platforms. 
+Copy and paste the following command. This should work for linux/osx users only
 
-```$ docker run --rm -v $(pwd):/work omslab/geotop```
+```$ docker run --rm -it -v $(pwd):/work omslab/geotop```
+
+The following command works for Windows users
+
+```$ docker run --rm -it -v C:\<full_path>\<project>:/work omslab/geotop```
 
 Options:
 
 * ```run``` will download the image and executes it afterwards.
 * ```--rm``` will remove the container when the model is finished.
+* ```-it``` will start the container in interactive mode
 * ```-v $(pwd):/work``` maps the current folder as the internal data folder 
   for GEOtop.
 * ```omslab/geotop```: this is the image name ```<organization_name>/<image_name>```
@@ -121,7 +126,7 @@ If you have any problems with or questions about this image, please contact us t
 # Known Issues
 
 * The Docker GEOtop image runs as the ```root``` user, thus the output files have root ownership. However, you can always open and read them without any problem;
-* To stop GEOtop mid-run, use the ```docker stop``` or ```docker kill``` command.
+* To stop GEOtop mid-run, press Ctrl-C;
 * GEOtop runs from within the container. This is the reason why the screen output shows ```/work/<file or folder>``` instead of your current path.
 * On certain Linux distributions (e.g. Ubuntu) you have to either run docker via ```sudo docker run ...``` or you configure the ```sudoers``` file for Docker. 
 
